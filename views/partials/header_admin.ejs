@@ -4,21 +4,21 @@
     <nav class="header__nav">
         <ul>
             <li>
-                <a href="/" class="">Home</a>
+                <a href="/" class="<%= isActiveRoute('/', currentRoute) %>">Home</a>
             </li>
             <li>
-                <a href="/about" class="">About</a>
+                <a href="/about"  class="<%= isActiveRoute('/about', currentRoute) %>">About</a>
             </li>
             <li>
-                <a href="/contact" class="">Contact</a>
+                <a href="/admin"class="<%= isActiveRoute('/admin', currentRoute) %>">Admin</a>
             </li>
         </ul>
     </nav>
 
     <div class="header__button">
-        <button>
+        <a href="/logout" role="button">
             Logout
-        </button>
+        </a>
     </div>
 
 </header>

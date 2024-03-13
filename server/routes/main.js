@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
+const {isActiveRoute} = require ('../helpers/routeHelpers');
 
 /*
  GET/HOME
@@ -31,7 +32,8 @@ router.get('', async (req,res) => {
          locals,
          data,
         current: page,
-        nextPage: hasNextPage ? nextPage : null
+        nextPage: hasNextPage ? nextPage : null,
+        currentRoute:'/'
      });
 
    }catch(error){
@@ -49,12 +51,15 @@ router.get('/post/:id', async (req,res) => {
        
      const locals = {
          title:data.title,
-         description: "Simple blog created with Nodejs Express and Mongodb"
+         description: "Simple blog created with Nodejs Express and Mongodb",
+         currentRoute: `/post/${slug}`
         }
       
         res.render('post',{
             locals,
-            data,});
+            data,
+            currentRoute:'/post/:id'
+        });
             
     }catch(error){
         console.log(error)
@@ -83,7 +88,7 @@ router.post('/search', async (req,res) => {
        
       
         res.render("search",{
-            data,locals
+            data,locals,currentRoute:'/search'
         });
             
     }catch(error){
@@ -95,11 +100,21 @@ router.post('/search', async (req,res) => {
 
 
 router.get('/about',(req,res) => {
-    res.render('about');
+    res.render('about',{
+        currentRoute:'/about'
+    });
     });
 
-router.get('/contact',(req,res) => {
-    res.render('contact');
+router.get('/admin',(req,res) => {
+    res.render('admin',{
+        currentRoute:'/admin'
+    });
+    });
+
+router.get('admin/dashboard',(req,res) => {
+    res.render('dashboard',{
+    currentRoute:'admin/dashboard'
+    });
     });
 
     module.exports = router
