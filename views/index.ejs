@@ -1,12 +1,12 @@
 <div class="author">
-    <h1 class="author__heading"> Hi, I am Gabe.</h1>
-    <p class="author__body">Fullstack developer</p>
+    <h1 class="author__heading"> Hi there!</h1>
+    <p class="author__body">Welcome to my blog</p>
 </div>
-
-<img src="/img/hero-image.webp" alt="hero image" class="hero-image" width="981" height="528">
-
+<div class="hero__container">
+<img src="/img/anime-me2.png" alt="hero image" class="hero-image">
+</div>
 <section class="articles">
-    <h2 class="articles__heading">Latest Posts</h2>
+    <h2 class="articles__heading">Posts</h2>
     <ul class="article-ul">
         <% data.forEach(post => { %>
         <li>
@@ -17,8 +17,11 @@
         </li>
         <% }) %>
     </ul>
-
-    <% if (nextPage !== null) { %>
-        <a href="/?page=<%=nextPage%>" class="pagination">&lt; View Older Posts</a>
+    <% if (current > 1) { %>
+        <a href="/?page=1" class="pagination__recent">&larr;View Recent Posts  </a>
     <% } %>
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%=nextPage%>" class="pagination__older">View Older Posts &rarr;</a>
+    <% } %>
+    
 </section>

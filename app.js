@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo');
 
+
 const connectDB = require('./server/config/db');
 const {isActiveRoute} = require('./server/helpers/routeHelpers')
 
@@ -40,6 +41,7 @@ app.locals.isActiveRoute = isActiveRoute;
 
 app.use('/', require('./server/routes/main'));
 app.use('/', require('./server/routes/admin'));
+
 
 app.listen(PORT, () =>{
 console.log(`App is listening to port ${PORT}`)
