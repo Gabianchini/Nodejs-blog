@@ -12,7 +12,7 @@ const {isActiveRoute} = require ('../helpers/routeHelpers');
 router.get('', async (req,res) => {
    try{
     const locals = {
-        title:"NodeJs Blog",
+        title:"Gabe's Blog",
         description: "Simple blog created with Nodejs Express and Mongodb"
        }
 

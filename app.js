@@ -5,6 +5,7 @@ const expressLayout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo');
+var favicon = require('serve-favicon');
 
 
 const connectDB = require('./server/config/db');
@@ -12,6 +13,8 @@ const {isActiveRoute} = require('./server/helpers/routeHelpers')
 
 const app = express();
 const PORT = 5000 || process.env.PORT;
+
+
 
 //Connect db
 connectDB();
@@ -31,6 +34,8 @@ app.use(session({
 }));
 
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
+
 
 //Templating Engine
 app.use(expressLayout);

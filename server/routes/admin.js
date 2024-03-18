@@ -187,7 +187,7 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
 });
 
 /*Get register page*/
-router.get('/register', authMiddleware, async (req, res) => {
+router.get('/register', async (req, res) => {
   try {
 
     const locals = {
