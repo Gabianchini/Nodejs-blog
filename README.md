@@ -56,7 +56,7 @@ npm start
 
 ## Take a look in the project:
 
-<img src="https://github.com/Gabianchini/Nodejs-blog/blob/main/blog--gif.gif" width="1200"/>
+<img src="https://github.com/Gabianchini/Nodejs-blog/blob/main/blog-gif.gif" width="1200"/>
 
 ### Study Content: 
 [Node.js Documentation](https://nodejs.org/en/docs/)<br>
